@@ -59,7 +59,7 @@ nav a:hover{color:var(--gold)}
 .hero{position:relative;overflow:hidden;padding-block:56px 72px}
 .hero::before{content:"";position:absolute;inset:-20% -10% auto auto;width:70%;aspect-ratio:1;background:radial-gradient(closest-side,rgba(0,90,64,.55),transparent);pointer-events:none}
 .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center;position:relative}
-.hero h1{font-size:clamp(38px,8.2vw,76px);margin-block:18px 22px}
+.hero h1{font-size:clamp(34px,5.4vw,62px);margin-block:18px 22px}
 .hero h1 em{font-style:italic;padding:0 .14em .06em;margin:0 -.14em;-webkit-box-decoration-break:clone;box-decoration-break:clone}
 .lede{font-size:clamp(16px,2.2vw,19px);color:var(--muted);max-width:52ch}
 .cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
@@ -81,7 +81,7 @@ nav a:hover{color:var(--gold)}
 .capa{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:6px}
 .capa div{background:rgba(0,0,0,.25);border-radius:12px;padding:12px;font-size:13px;line-height:1.45}
 .capa b{display:block;font:500 11px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--gold);margin-bottom:6px}
-@media(max-width:860px){.hero-grid{grid-template-columns:1fr}.stage{display:none}.hero{padding-block:40px 56px!important}}
+@media(max-width:860px){.hero-grid{grid-template-columns:1fr}.hero{padding-block:40px 56px!important}}
 
 /* Cinta de normas */
 .ticker{border-block:1px solid var(--line);overflow:hidden;background:var(--surface)}
@@ -278,6 +278,40 @@ section{padding-block:88px}
 .rfoot .docs{color:var(--muted)}
 @media(max-width:860px){.demo{grid-template-columns:1fr;gap:32px}.phone{width:min(260px,100%)}}
 
+/* Quiz de preparación */
+.mini-note{display:flex;align-items:center;gap:10px;margin-top:22px;font:500 12px/1 var(--mono);letter-spacing:.06em;color:var(--gold)}
+.quiz{position:relative;z-index:1;background:linear-gradient(160deg,rgba(12,58,41,.94),rgba(8,42,30,.97));border:1px solid var(--gold);border-radius:24px;padding:26px;box-shadow:0 40px 90px -30px #000,0 0 90px -40px rgba(211,174,108,.6);backdrop-filter:blur(8px)}
+.q-head{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.q-head .tag{font:500 11px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
+.q-step{font:500 11px/1 var(--mono);color:var(--muted)}
+.q-bar{height:3px;border-radius:3px;background:rgba(255,255,255,.08);margin:14px 0 22px;overflow:hidden}
+.q-bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--gold-deep),#f0d9a6);transition:width .5s cubic-bezier(.2,.7,.2,1)}
+.q-title{font:400 clamp(21px,2.6vw,26px)/1.2 var(--display);margin-bottom:18px;text-wrap:balance}
+.q-opts{display:grid;gap:10px}
+.q-opt{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:54px;padding:12px 18px;border-radius:14px;border:1px solid var(--line);background:rgba(0,0,0,.2);color:var(--fg);font:500 15px/1.3 var(--body);text-align:left;cursor:pointer;transition:border-color .2s,background .2s,transform .2s}
+.q-opt::after{content:"\2192";color:var(--gold);transition:transform .2s}
+.q-opt:hover{border-color:var(--gold);background:rgba(211,174,108,.1);transform:translateX(3px)}
+.q-opt:hover::after{transform:translateX(4px)}
+.q-back{margin-top:16px;background:none;border:0;color:var(--muted);font:500 12px var(--mono);cursor:pointer;min-height:36px;padding:0}
+.q-res{display:grid;gap:18px}
+.gauge{display:flex;align-items:center;gap:20px}
+.gauge .ring{position:relative;width:112px;height:112px;flex:none}
+.gauge svg{width:100%;height:100%;transform:rotate(-90deg)}
+.gauge circle{fill:none;stroke-width:9;stroke-linecap:round}
+.gauge .bg{stroke:rgba(255,255,255,.08)}
+.gauge .fg{stroke:var(--gold);stroke-dasharray:339.3;stroke-dashoffset:339.3;transition:stroke-dashoffset 1.4s cubic-bezier(.2,.7,.2,1)}
+.gauge .num{position:absolute;inset:0;display:grid;place-items:center;font:400 34px/1 var(--display)}
+.gauge .lvl{font:400 22px/1.2 var(--display)}
+.gauge .lvl small{display:block;font:500 11px/1.3 var(--mono);letter-spacing:.08em;color:var(--muted);margin-top:6px;text-transform:uppercase}
+.gaps h4{margin:0 0 8px;font:500 11px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--gold)}
+.gaps ul{list-style:none;margin:0;padding:0;display:grid;gap:8px;font-size:14px}
+.gaps li{display:flex;gap:10px}
+.gaps li::before{content:"";flex:none;width:7px;height:7px;margin-top:7px;background:var(--crit);transform:rotate(45deg)}
+.q-next{padding:14px;border-radius:14px;background:rgba(0,0,0,.28);font-size:14px;color:var(--muted)}
+.q-next b{color:var(--fg)}
+.q-fine{font-size:11px;color:var(--muted);text-align:center}
+@media(max-width:860px){.stage{display:block!important}.rings{display:none}.hero-grid{gap:28px}.quiz{padding:20px}.proof{display:none}.hero .lede{font-size:16px}.hero{padding-block:32px 48px!important}}
+
 footer{border-top:1px solid var(--line);padding-block:40px 56px;color:var(--muted);font-size:14px}
 .foot{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;align-items:center}
 .foot ul{display:flex;gap:22px;list-style:none;margin:0;padding:0;flex-wrap:wrap}
@@ -308,16 +342,13 @@ footer{border-top:1px solid var(--line);padding-block:40px 56px;color:var(--mute
 <section class="hero" style="padding-block:56px 72px">
   <div class="wrap hero-grid">
     <div>
-      <div class="eyebrow">Sistemas de gestión para exportar</div>
-      <h1>Certificaciones que <em class="gold">sí aprueban</em> la auditoría.</h1>
-      <p class="lede">Llevamos a plantas, productores y cadenas de suministro desde el diagnóstico hasta la auditoría de tercera parte. Menos papel, más cultura de inocuidad y ética en piso.</p>
-      <div class="cta-row">
-        <a class="btn btn-gold" href="#agenda">Reservar 15 min gratis →</a>
-        <a class="btn btn-line" href="#servicios">Ver servicios</a>
-      </div>
+      <div class="eyebrow">Consultoría en certificaciones de exportación</div>
+      <h1>Una no conformidad mayor puede <em class="gold">costarte el contenedor.</em></h1>
+      <p class="lede">Descubre en 40 segundos qué tan preparada está tu planta para la auditoría de tu comprador y qué cerrar primero.</p>
       <div class="proof" aria-label="Esquemas que cubrimos">
-        <span class="chip">BRCGS</span><span class="chip">HACCP</span><span class="chip">SMETA</span><span class="chip">FSSC 22000</span><span class="chip">Orgánico</span><span class="chip">+ 10 más</span>
+        <span class="chip">BRCGS</span><span class="chip">HACCP</span><span class="chip">SMETA</span><span class="chip">FSSC 22000</span><span class="chip">Orgánico</span><span class="chip">+ 9 más</span>
       </div>
+      <p class="mini-note"><span class="pulse"></span>Consultoría gratuita de 15 min · Sin compromiso</p>
     </div>
     <div class="stage">
       <div class="rings" aria-hidden="true">
@@ -327,18 +358,11 @@ footer{border-top:1px solid var(--line);padding-block:40px 56px;color:var(--mute
           <circle cx="200" cy="200" r="112" stroke="url(#g)" stroke-width="1" opacity=".55"/>
         </svg>
       </div>
-      <article class="finding" aria-label="Ejemplo de hallazgo formal">
-        <header><span class="tag">Hallazgo · BRCGS Issue 9</span><span class="sample">EJEMPLO</span></header>
-        <dl style="margin:0">
-          <div class="f-row"><dt>Requisito infringido</dt><dd>Cláusula 4.7 · Mantenimiento de equipos de proceso</dd></div>
-          <div class="f-row"><dt>Evidencia objetiva</dt><dd>Faja transportadora de línea 2 con tornillos faltantes y sin registro de inspección en los últimos 30 días.</dd></div>
-          <div class="f-row"><dt>Clasificación</dt><dd><span class="sev">No conformidad mayor</span>Riesgo físico</dd></div>
-        </dl>
-        <div class="capa">
-          <div><b>Corrección inmediata</b>Retener lote, inspeccionar con detector y reponer fijaciones.</div>
-          <div><b>Acción correctiva</b>Causa raíz: plan de mantenimiento preventivo sin responsable asignado.</div>
-        </div>
-      </article>
+      <div class="quiz" id="quiz" aria-live="polite">
+        <div class="q-head"><span class="tag">Test de preparación</span><span class="q-step" id="qstep"></span></div>
+        <div class="q-bar"><i id="qbar"></i></div>
+        <div id="qbody"></div>
+      </div>
     </div>
   </div>
 </section>
@@ -350,7 +374,38 @@ footer{border-top:1px solid var(--line);padding-block:40px 56px;color:var(--mute
   </div>
 </div>
 
-<section id="servicios">
+<section id="herramienta">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Incluido en el servicio</div>
+      <h2>De la foto al hallazgo formal, con respaldo de un auditor.</h2>
+      <p>Tu equipo fotografía lo que ve en piso. La plataforma redacta el hallazgo bajo la norma, propone la clasificación y el plan CAPA, y un auditor de Compaqta lo valida antes de llegar a tu gerencia.</p>
+    </div>
+    <div class="tabs" role="tablist" aria-label="Ejemplos de hallazgo" id="tabs"></div>
+    <div class="demo" id="demo">
+      <div class="phone" aria-hidden="true">
+        <div class="screen">
+          <div class="notch"></div>
+          <div id="scene"></div>
+          <div class="scanline"></div>
+          <div class="det" id="det"><span id="detl"></span></div>
+          <div class="cap"><span id="cap"></span></div>
+        </div>
+      </div>
+      <article class="report" aria-live="polite">
+        <div class="rhead"><span class="tag" id="rn"></span><span class="sample">EJEMPLO</span></div>
+        <div class="f-row rr" style="--d:2.0s"><dt>Requisito infringido</dt><dd id="r1"></dd></div>
+        <div class="f-row rr" style="--d:2.3s"><dt>Evidencia objetiva</dt><dd id="r2"></dd></div>
+        <div class="f-row rr" style="--d:2.6s"><dt>Clasificación</dt><dd id="r3"></dd></div>
+        <div class="capa rr" style="--d:2.9s"><div><b>Corrección inmediata</b><span id="c1"></span></div><div><b>Acción correctiva</b><span id="c2"></span></div></div>
+        <div class="rfoot rr" style="--d:3.2s"><span class="ok"><i></i>Validado por un auditor de Compaqta</span><span class="docs">Reporte · Resumen gerencial · Presentación HACCP</span></div>
+      </article>
+    </div>
+    <p class="tool-note"><span>Ejemplos ilustrativos. La escala y los pesos se configuran según la norma de tu certificación.</span><a class="btn btn-line btn-sm" href="#agenda">Ver una demo en la consultoría</a></p>
+  </div>
+</section>
+
+<section id="servicios" style="padding-top:0">
   <div class="wrap">
     <div class="sec-head">
       <div class="eyebrow">Servicios</div>
@@ -390,37 +445,6 @@ footer{border-top:1px solid var(--line);padding-block:40px 56px;color:var(--mute
         <p>Simulacros y cierre de no conformidades.</p>
       </article>
     </div>
-  </div>
-</section>
-
-<section id="herramienta" style="padding-top:0">
-  <div class="wrap">
-    <div class="sec-head">
-      <div class="eyebrow">Incluido en el servicio</div>
-      <h2>De la foto al hallazgo formal, con respaldo de un auditor.</h2>
-      <p>Tu equipo fotografía lo que ve en piso. La plataforma redacta el hallazgo bajo la norma, propone la clasificación y el plan CAPA, y un auditor de Compaqta lo valida antes de llegar a tu gerencia.</p>
-    </div>
-    <div class="tabs" role="tablist" aria-label="Ejemplos de hallazgo" id="tabs"></div>
-    <div class="demo" id="demo">
-      <div class="phone" aria-hidden="true">
-        <div class="screen">
-          <div class="notch"></div>
-          <div id="scene"></div>
-          <div class="scanline"></div>
-          <div class="det" id="det"><span id="detl"></span></div>
-          <div class="cap"><span id="cap"></span></div>
-        </div>
-      </div>
-      <article class="report" aria-live="polite">
-        <div class="rhead"><span class="tag" id="rn"></span><span class="sample">EJEMPLO</span></div>
-        <div class="f-row rr" style="--d:2.0s"><dt>Requisito infringido</dt><dd id="r1"></dd></div>
-        <div class="f-row rr" style="--d:2.3s"><dt>Evidencia objetiva</dt><dd id="r2"></dd></div>
-        <div class="f-row rr" style="--d:2.6s"><dt>Clasificación</dt><dd id="r3"></dd></div>
-        <div class="capa rr" style="--d:2.9s"><div><b>Corrección inmediata</b><span id="c1"></span></div><div><b>Acción correctiva</b><span id="c2"></span></div></div>
-        <div class="rfoot rr" style="--d:3.2s"><span class="ok"><i></i>Validado por un auditor de Compaqta</span><span class="docs">Reporte · Resumen gerencial · Presentación HACCP</span></div>
-      </article>
-    </div>
-    <p class="tool-note"><span>Ejemplos ilustrativos. La escala y los pesos se configuran según la norma de tu certificación.</span><a class="btn btn-line btn-sm" href="#agenda">Ver una demo en la consultoría</a></p>
   </div>
 </section>
 
@@ -653,6 +677,51 @@ footer{border-top:1px solid var(--line);padding-block:40px 56px;color:var(--mute
     demo.classList.remove('run');void demo.offsetWidth;demo.classList.add('run');
   }
   show(0);
+  /* Test de preparación */
+  var QS=[
+   {k:'norma',q:'¿Qué certificación te exige tu comprador?',o:['BRCGS','SQF o FSSC 22000','SMETA o SA8000','Orgánico o Fairtrade','GLOBALG.A.P.','ISO 9001, 14001 o 45001']},
+   {k:'fecha',q:'¿Cuándo es tu auditoría?',o:['En menos de 3 meses','Entre 3 y 6 meses','Entre 6 y 12 meses','Aún no hay fecha']},
+   {k:'sis',q:'¿En qué punto está tu sistema hoy?',o:['Aún no tengo uno','Tengo documentos, pero no se aplican en piso','Funciona, pero sin auditoría interna','Ya tuve una auditoría con hallazgos']}
+  ];
+  var GAPS={
+   0:['Análisis de peligros HACCP y control de puntos críticos','Control de plagas y mantenimiento de instalaciones','Defensa alimentaria y fraude alimentario'],
+   1:['Plan HACCP y verificación de la efectividad','Auditoría interna y gestión de acciones correctivas','Trazabilidad y retiro de producto (simulacro)'],
+   2:['Seguridad y salud, salidas de emergencia','Horas de trabajo y registros de nómina','Gestión de proveedores y subcontratación'],
+   3:['Segregación de producto y balance de masas','Trazabilidad lote a lote','Registros de insumos y de terceros'],
+   4:['Registros de aplicación de fitosanitarios y límites de residuos','Higiene y salud del trabajador','Gestión de agua, suelo y trazabilidad'],
+   5:['Control de documentos y no conformidades','Auditoría interna y revisión por la dirección','Gestión de riesgos y objetivos']
+  };
+  var qa=[],qi=0,qbody=$('qbody');
+  function qrender(){
+    var s=QS[qi];$('qstep').textContent='Pregunta '+(qi+1)+' de '+QS.length;$('qbar').style.width=(qi/QS.length*100)+'%';
+    var h='<div class="q-title">'+s.q+'</div><div class="q-opts">';
+    s.o.forEach(function(o,i){h+='<button type="button" class="q-opt" data-i="'+i+'">'+o+'</button>'});
+    h+='</div>'+(qi?'<button type="button" class="q-back" id="qback">← Volver</button>':'');
+    qbody.innerHTML=h;
+    qbody.querySelectorAll('.q-opt').forEach(function(b){b.addEventListener('click',function(){qa[qi]=+b.dataset.i;qi++;qi<QS.length?qrender():qresult()})});
+    var bk=$('qback');if(bk)bk.addEventListener('click',function(){qi--;qrender()});
+  }
+  function qresult(){
+    var base=[15,35,55,70][qa[2]],pen=[-15,-5,0,5][qa[1]],sc=Math.max(5,Math.min(95,base+pen));
+    var lvl=sc<40?'Riesgo alto':sc<65?'Riesgo medio':'Riesgo moderado';
+    var pk=sc<40?'Implementación':sc<65?'Diagnóstico (Gap Analysis)':'Acompañamiento';
+    var why=sc<40?'Hay brechas estructurales y poco margen de tiempo para cerrarlas.':sc<65?'Tienes una base, pero conviene medir las brechas por cláusula antes de la auditoría.':'Tu sistema está encaminado; el foco es sostener y verificar.';
+    $('qstep').textContent='Resultado';$('qbar').style.width='100%';
+    var gl=GAPS[qa[0]].map(function(g){return '<li>'+g+'</li>'}).join('');
+    var notes='Test de preparación · '+QS[0].o[qa[0]]+' · Auditoría: '+QS[1].o[qa[1]]+' · Sistema: '+QS[2].o[qa[2]]+' · Puntaje estimado: '+sc;
+    var href=CAL_URL+'?'+new URLSearchParams({notes:notes}).toString();
+    qbody.innerHTML='<div class="q-res"><div class="gauge"><div class="ring"><svg viewBox="0 0 120 120"><circle class="bg" cx="60" cy="60" r="54"/><circle class="fg" id="qfg" cx="60" cy="60" r="54"/></svg><div class="num" id="qnum">0</div></div><div class="lvl">'+lvl+'<small>Preparación estimada</small></div></div>'
+     +'<div class="gaps"><h4>Brechas que suelen aparecer primero</h4><ul>'+gl+'</ul></div>'
+     +'<div class="q-next"><b>Siguiente paso: '+pk+'.</b> '+why+'</div>'
+     +'<a class="btn btn-gold" target="_blank" rel="noopener" href="'+href+'">Reservar mi consultoría gratis →</a>'
+     +'<div class="q-fine">Estimación orientativa. No reemplaza un Gap Analysis.</div><button type="button" class="q-back" id="qredo" style="margin:0 auto">Repetir el test</button></div>';
+    $('qredo').addEventListener('click',function(){qa=[];qi=0;qrender()});
+    var fg=$('qfg'),nm=$('qnum'),reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+    requestAnimationFrame(function(){fg.style.strokeDashoffset=339.3*(1-sc/100)});
+    if(reduce){nm.textContent=sc;return}
+    var t0=null;(function tick(ts){t0=t0||ts;var p=Math.min(1,(ts-t0)/1300);nm.textContent=Math.round(sc*(1-Math.pow(1-p,3)));if(p<1)requestAnimationFrame(tick)})(performance.now?performance.now():0);
+  }
+  qrender();
   if('IntersectionObserver' in window){
     var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
     document.querySelectorAll('.card,.flow-step,.out,.pk-card,.case,.quote,.step,.frame,.faq details,.cal').forEach(function(el,i){el.classList.add('rv');el.style.transitionDelay=(i%3)*90+'ms';io.observe(el)});
